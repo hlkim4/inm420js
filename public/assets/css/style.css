@@ -1,0 +1,179 @@
+
+
+/* 1. Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+}
+
+/* 2. Typography & Animations */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.section p {
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out 0.3s;
+}
+
+.section.active p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.time-badge {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* --- Class animate-title --- */
+
+/* Zoom-In */
+@keyframes customZoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Fade-Right */
+@keyframes customFadeRight {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade-Up */
+@keyframes customFadeUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section h2.animate-title {
+    opacity: 0;
+}
+
+/* Shibuya Sky: Zoom-In */
+#section1.active .animate-title {
+    animation: customZoomIn 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* Shinjuku: Fade-Right */
+#section2.active .animate-title {
+    animation: customFadeRight 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* Roppongi: Fade-Up */
+#section3.active .animate-title {
+    animation: customFadeUp 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* 3. Layout Components */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 100;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #555;
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* Section Wrapper */
+.content-wrapper {
+    padding: 100px 25px 20px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 4. Library Specific Styling */
+
+/* Glide.js (Slider) */
+.glide {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.glide__slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Leaflet (Map) */
+#map {
+    margin-top: 20px;
+    border: 2px solid #ddd;
+    z-index: 1;
+}
+
+/* 5. Responsive Design (Media Queries) */
+
+/* Tablets and Desktops */
+@media (min-width: 768px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .section p {
+        font-size: 1.2rem;
+    }
+
+    .content-wrapper {
+        max-width: 800px;
+    }
+
+    .glide__slide img {
+        height: 400px;
+    }
+}
+
+footer {
+    padding: 20px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    font-size: 0.8rem;
+}
