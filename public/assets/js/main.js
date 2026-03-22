@@ -12,14 +12,14 @@ new fullpage('#fullpage', {
     bigSectionsDestination: 'top',
 
     afterLoad: function(origin, destination, direction) {
-        // [SECTION 2] Shibuya - GSAP
+        // Shibuya
         if (destination.index === 2) {
             gsap.to(".highlight-item", {
                 duration: 0.8, opacity: 1, y: -10, stagger: 0.2, ease: "back.out(1.7)"
             });
         }
 
-        // [SECTION 3] Ginza - Typed.js
+        // Ginza
         if (destination.index === 3) {
             const typedElement = document.getElementById('typed-text');
             if (typedElement && typedElement.innerHTML === "") {
@@ -29,7 +29,7 @@ new fullpage('#fullpage', {
                         'Enjoy the magnificent architecture.',
                         'Experience the luxury of Ginza at night.'
                     ],
-                    typeSpeed: 50, backSpeed: 30, loop: false, showCursor: false
+                    typeSpeed: 50, backSpeed: 30, loop: true, showCursor: false
                 });
             }
         }
